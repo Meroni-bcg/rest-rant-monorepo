@@ -17,8 +17,15 @@ function LoginForm() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-       
-
+       const response = await fetch('https://localhost:3000/authentication', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+       })
+       const data = await response.json()
+       console.log(data)
     }
 
     return (
