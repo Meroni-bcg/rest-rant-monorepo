@@ -4,7 +4,7 @@ const db = require("../models")
 const bcrypt = require('bcrypt')
 
 const { User } = db
-
+//line 8-15 adds to database
 router.post('/', async (req, res) => {
     let { password, ...rest } = req.body;
     const user = await User.create({ 
